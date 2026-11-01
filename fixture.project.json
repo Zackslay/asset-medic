@@ -1,0 +1,13 @@
+{
+  "name": "AssetMedicTestPlace",
+  "tree": {
+    "$className": "DataModel",
+    "Workspace": { "$className": "Workspace" },
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "AssetMedicSource": { "$path": "src" },
+      "AssetMedicStudioSpec": { "$path": "tests/studio.spec.luau" },
+      "AssetMedicUISpec": { "$path": "tests/ui.spec.luau" }
+    }
+  }
+}

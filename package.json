@@ -1,0 +1,12 @@
+{
+  "name": "asset-medic",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/test.mjs",
+    "build": "node scripts/build.mjs",
+    "build:fixture": "node scripts/build.mjs --fixture"
+  },
+  "devDependencies": { "luau-web": "1.5.1" }
+}

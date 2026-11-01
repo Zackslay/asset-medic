@@ -1,0 +1,23 @@
+name: Validate plugin
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: CompeyDev/setup-rokit@v0.2.1
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - run: npm run build:fixture
+      - run: python scripts/verify-artifact.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: asset-medic-preview
+          path: dist/
