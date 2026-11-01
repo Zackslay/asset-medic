@@ -2,6 +2,8 @@
 
 Keep contributions focused on locating asset references and safe, reviewable property replacement.
 
+Follow the [code of conduct](CODE_OF_CONDUCT.md). Report vulnerabilities privately using the [security policy](SECURITY.md).
+
 - Use strict Luau. Keep parsing pure, scanning read-only, and mutations in Replacement.
 - Never execute scripts being scanned or automatically edit their source.
 - Add regression tests for exact-ID boundaries and replacement safety. The Node harness runs the actual Luau modules, not a reimplementation.

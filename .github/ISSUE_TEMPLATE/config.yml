@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Discord support
+    url: https://discord.gg/4cxQwKtY3q
+    about: Ask questions and get help using the plugin.
+  - name: Private vulnerability report
+    url: https://github.com/Zackslay/asset-medic/security/advisories/new
+    about: Report security vulnerabilities privately, not in public issues.

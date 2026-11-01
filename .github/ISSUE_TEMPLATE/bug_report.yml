@@ -1,0 +1,45 @@
+name: Bug report
+description: Report a reproducible problem with Asset Medic.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: "For security vulnerabilities, use the repository's Security tab instead. Remove private scripts, credentials, and sensitive asset details."
+  - type: input
+    id: plugin_version
+    attributes:
+      label: Asset Medic version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: studio_version
+    attributes:
+      label: Roblox Studio version and operating system
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include the scan scope and input format. A small disposable fixture helps.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: For replacement problems, describe the values before, after Apply, and after Undo.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or screenshots
+      description: Optional. Remove private information before posting.

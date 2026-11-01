@@ -7,7 +7,7 @@ root = Path(__file__).resolve().parents[1]
 dist = root / "dist"
 archive = dist / "AssetMedic-0.1.0-source.zip"
 directories = ("src", "tests", "scripts", "docs", ".github")
-files = ["README.md", "CONTRIBUTING.md", "CHANGELOG.md", "LICENSE", ".gitignore",
+files = ["README.md", "CONTRIBUTING.md", "CODE_OF_CONDUCT.md", "SECURITY.md", "CHANGELOG.md", "LICENSE", ".gitignore",
          "package.json", "package-lock.json", "rokit.toml", "default.project.json", "fixture.project.json"]
 paths = [root / name for name in files]
 for directory in directories:

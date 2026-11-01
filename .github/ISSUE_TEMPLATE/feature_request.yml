@@ -1,0 +1,23 @@
+name: Feature request
+description: Suggest an improvement to finding or safely replacing asset references.
+title: "[Feature]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe your Studio workflow and where it becomes difficult.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed improvement
+      description: For property support, include the class and property name.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or examples
+      description: Optional. Explain your current workaround or share a non-sensitive example.
