@@ -1,18 +1,10 @@
-# Release checklist and launch material
+# Publishing guide
 
-## Validation gates
+## Before publishing
 
-- [x] Local Luau test suite and compilation pass.
-- [x] Rojo builds both the plugin and disposable place.
-- [x] Run studio.spec in the disposable place; record results and timing.
-- [ ] Install the local plugin and exercise toolbar toggle, dock/float, close/reopen, and unload.
-- [ ] Check light/dark themes and minimum 360 × 500 panel size. Long paths and error messages remain readable.
-- [ ] Verify actual Explorer selection and opening a matching script line with an unsaved editor buffer.
-- [ ] Test empty input, multiple IDs, no matches, denied script access, inventory, category filter, selection scope, and no selection.
-- [ ] Cancel a large scan; close the panel mid-scan; ensure no late results or errors.
-- [ ] Preview a batch, edit/delete a target, apply, and verify skipped rows and one-step undo/redo.
-- [ ] Attempt replacement during playtesting and while another recording is active; verify no writes.
-- [ ] Review the supported-property table and limitations against the shipping artifact.
+Use [VALIDATION.md](VALIDATION.md) for completed checks and remaining release gates. Build and test instructions live in the [README](../README.md); beta release notes live in [BETA_RELEASE.md](BETA_RELEASE.md).
+
+Package downloads and checksums with `python scripts/package-release.py` after building both artifacts. Publish the plugin and test place as release attachments; keep dependencies and generated builds out of the source repository.
 
 ## Free Creator Store listing draft
 
@@ -24,7 +16,7 @@ Free and open source. Runs locally with no HTTP access or account. Script matche
 
 Support server: [Discord](https://discord.gg/4cxQwKtY3q).
 
-Attach the public repository URL only after the repository exists. Set the plugin listing to free. Upload the built artifact after the validation gates pass; neither publishing step is automated by this project.
+Repository: [Zackslay/asset-medic](https://github.com/Zackslay/asset-medic). Set the Creator Store listing to free and upload the built plugin after the remaining release gates pass. The Creator Store listing is not published yet.
 
 ## Launch demo storyboard
 
@@ -38,4 +30,4 @@ Record actual Studio footage; do not simulate a successful workflow.
 
 Caption: **“Find where that Roblox asset is hiding. Replace it safely.”**
 
-Launch with the GitHub source, a versioned release artifact, and the free Creator Store link. Invite narrowly scoped contributions: property coverage, parsing edge cases, and reproducible safety bugs. No growth or star-count claims until there is actual usage evidence.
+Share the repository and versioned release; add the Creator Store link once published. Invite feedback through [GitHub issues](https://github.com/Zackslay/asset-medic/issues) or the support server.
