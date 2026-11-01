@@ -8,6 +8,8 @@ Free, MIT licensed, and local. No account, backend, HTTP requests, or AI subscri
 
 **Public beta:** download the plugin from [GitHub Releases](https://github.com/Zackslay/asset-medic/releases). Start on a saved copy of your place. [Report a bug](https://github.com/Zackslay/asset-medic/issues) with reproduction steps and your Studio version.
 
+**Need help?** Join our [Discord support server](https://discord.gg/4cxQwKtY3q) for questions and troubleshooting.
+
 ## Install locally
 
 1. Build the plugin using the instructions below, or use `AssetMedic-0.1.0.rbxmx` from a release.

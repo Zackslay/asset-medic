@@ -28,4 +28,6 @@ In a blank Studio place, use Explorer's **Insert from File** to insert the plugi
 
 ## Feedback
 
+For questions and troubleshooting, join our [Discord support server](https://discord.gg/4cxQwKtY3q).
+
 Open a GitHub issue with your Studio version, reproduction steps, expected and actual behavior, and relevant Output messages. Remove private source and asset details before sharing. Useful contributions include property coverage, parsing examples, and reproducible replacement or undo bugs.

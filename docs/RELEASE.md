@@ -22,6 +22,8 @@
 
 Free and open source. Runs locally with no HTTP access or account. Script matches are read-only. Does not bypass asset permissions or recover unavailable assets. MeshPart geometry is searchable but not automatically replaced.
 
+Support server: [Discord](https://discord.gg/4cxQwKtY3q).
+
 Attach the public repository URL only after the repository exists. Set the plugin listing to free. Upload the built artifact after the validation gates pass; neither publishing step is automated by this project.
 
 ## Launch demo storyboard
