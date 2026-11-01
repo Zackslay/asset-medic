@@ -89,6 +89,10 @@ Start with a reproducible ID parsing issue or an unsupported asset property. Kee
 
 Before opening a PR, run `npm test`, build both artifacts, and report which Studio checks you actually performed. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## Acknowledgments
+
+Built by Zackslay with assistance from OpenAI's ChatGPT and Codex in planning, implementation, testing, and documentation. Asset Medic is an independent project and is not affiliated with or endorsed by OpenAI or Roblox.
+
 ## License
 
 MIT. The repository contains no third-party Roblox assets.
