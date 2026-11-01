@@ -1,25 +1,43 @@
-# Asset Medic
+<div align="center">
 
-**Find where that Roblox asset is hiding. Replace it safely.**
+![Asset Medic — find asset references, review replacements, and keep control](docs/assets/banner.svg)
 
-Paste an asset ID, Roblox asset URL, or Output error into a Studio panel. Locate matching objects and script lines, review a replacement preview, and apply selected property changes as one undo operation.
+[![Validate plugin](https://github.com/Zackslay/asset-medic/actions/workflows/ci.yml/badge.svg)](https://github.com/Zackslay/asset-medic/actions/workflows/ci.yml)
+[![Public beta](https://img.shields.io/badge/release-v0.1.0_beta-5eead4?style=flat-square&labelColor=172033)](https://github.com/Zackslay/asset-medic/releases/tag/v0.1.0)
+[![MIT license](https://img.shields.io/badge/license-MIT-8bd8ff?style=flat-square&labelColor=172033)](LICENSE)
+[![Discord support](https://img.shields.io/badge/Discord-support-5865F2?style=flat-square&labelColor=172033)](https://discord.gg/4cxQwKtY3q)
 
-Free, MIT licensed, and local. No account, backend, HTTP requests, or AI subscription.
+**A free Roblox Studio plugin for finding and replacing asset references.**
 
-**Public beta:** download the plugin from [GitHub Releases](https://github.com/Zackslay/asset-medic/releases). Start on a saved copy of your place. [Report a bug](https://github.com/Zackslay/asset-medic/issues) with reproduction steps and your Studio version.
+[**Download the plugin**](https://github.com/Zackslay/asset-medic/releases/download/v0.1.0/AssetMedic-0.1.0.rbxmx) · [**Join Discord**](https://discord.gg/4cxQwKtY3q) · [**Report a bug**](https://github.com/Zackslay/asset-medic/issues)
 
-**Need help?** Join our [Discord support server](https://discord.gg/4cxQwKtY3q) for questions and troubleshooting.
+</div>
 
-## Install locally
+---
 
-1. Build the plugin using the instructions below, or use `AssetMedic-0.1.0.rbxmx` from a release.
+Paste an asset ID, Roblox URL, or Output error. Asset Medic finds matching objects and script lines, lets you review selected replacements, and groups successful property edits into one Studio undo operation.
+
+No account, backend, HTTP access, or AI subscription needed.
+
+> [!NOTE]
+> **Public beta.** Start on a saved copy of your place. The Creator Store listing is not published yet. See [tested behavior and remaining checks](docs/VALIDATION.md).
+
+## What it does
+
+| Find it | Review it | Replace it |
+| --- | --- | --- |
+| Search a whole place or a selection. | Filter results and choose exactly what changes. | Apply selected property edits as one undo operation. |
+| Browse an inventory of supported asset references. | Inspect full old and new values before applying. | Skip changed or deleted targets and report failures. |
+| Jump to objects and readable script lines. | Keep script text and protected mesh geometry read-only. | Undo the batch using Studio's **Edit → Undo**. |
+
+## Get started
+
+1. [Download **AssetMedic-0.1.0.rbxmx**](https://github.com/Zackslay/asset-medic/releases/download/v0.1.0/AssetMedic-0.1.0.rbxmx), or build it from source below.
 2. In a disposable Studio place, insert the `.rbxmx` file through **Insert from File** in Explorer. This creates an `AssetMedic` Script with child modules.
 3. Right-click the root Script and choose **Save / Export → Save as Local Plugin**. Leave the root Script enabled when saving the plugin, then remove the inserted Script from the place. Do not leave the plugin source as a game script.
 4. Open a fresh Studio instance, then **Plugins → Asset Medic**. If Studio requests script access, allow it to enable read-only script searching. No network access is needed.
 
-The Creator Store listing is not published yet. Treat v0.1.0 as a development preview; completed checks and remaining release gates are recorded in [VALIDATION.md](docs/VALIDATION.md).
-
-## Workflow
+## Find → preview → apply
 
 1. Paste the ID, URL, or error and click **Find references**. Multiple IDs produce a choice list.
 2. Choose **Whole place** or **Selection** before scanning. Selection includes selected objects and descendants; an empty selection never falls back to the whole place.
@@ -31,7 +49,12 @@ The Creator Store listing is not published yet. Treat v0.1.0 as a development pr
 
 Scans run on demand, yield periodically, and can be cancelled. Results are paginated to bound UI object count. Closing the panel cancels scanning and releases result references.
 
-## Supported properties
+## Asset coverage
+
+Audio, animations, images, effects, meshes, and readable script references are supported through the properties below.
+
+<details>
+<summary><strong>View supported classes and properties</strong></summary>
 
 | Class | Properties | Replacement |
 | --- | --- | --- |
@@ -48,6 +71,8 @@ Scans run on demand, yield periodically, and can be cancelled. Results are pagin
 
 Only positive numeric Roblox asset references in supported properties are indexed. Built-in `rbxasset://` paths, arbitrary external URLs, and object-backed Content values are outside v1. Whole-place scanning covers place-owned content services and excludes Studio/plugin internals.
 
+</details>
+
 ## Limits
 
 - Replacing an ID does not grant permissions, restore moderated assets, check asset type, or prove an asset will load.
@@ -57,7 +82,10 @@ Only positive numeric Roblox asset references in supported properties are indexe
 - Scans are snapshots. Objects edited while scanning or after preview may become stale. The apply step checks the original property value again.
 - Library and catalog URLs identify the supplied ID; the plugin does not resolve container/decal IDs into different underlying asset IDs.
 
-## Build and test
+## For developers
+
+<details>
+<summary><strong>Build from source and run the tests</strong></summary>
 
 Prerequisites: Node.js 22 or newer, npm, and Rojo 7.7.0 on PATH. The lockfile pins the test dependency. Node tooling is development-only; the installed plugin has no external runtime dependencies.
 
@@ -82,6 +110,12 @@ require(game.ServerStorage.AssetMedicUISpec)()
 ```
 
 This checks actual supported property writes, current script text, replacement, Studio undo/redo, UI construction, and a 5,000-sound scan. It creates and cleans up a fixture, opens/closes a test script, and changes the disposable place's undo history. Unavailable test IDs can produce asset-load errors; these are expected and are not evidence of permission diagnosis. Run it from the Command Bar: Studio MCP may wrap commands in its own recording, causing the replacement's recording to be refused. Never run it against your production place. See [release checks](docs/RELEASE.md).
+
+</details>
+
+## Support
+
+Join the [Discord support server](https://discord.gg/4cxQwKtY3q) for questions and troubleshooting. Found a bug? [Open an issue](https://github.com/Zackslay/asset-medic/issues) with your Studio version, reproduction steps, and expected versus actual behavior.
 
 ## Contribute
 
