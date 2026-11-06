@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-labelledby="title">
+  <title id="title">Illustrated Asset Medic walkthrough: paste an error, find references, preview a replacement, apply and undo</title>
+  <style>
+    text { font-family: system-ui, sans-serif; fill: #eef5ff }
+    .small { font-size: 15px; fill: #a9bed2 }
+    .heading { font-size: 21px; font-weight: 700 }
+    .value { font-family: monospace; font-size: 16px; fill: #74e8d5 }
+    .card { fill: #172538; stroke: #344a60 }
+    .cue { fill: none; stroke: #5eead4; stroke-width: 3; opacity: 0; animation: step 16s infinite }
+    @keyframes step { 0%, 24% { opacity: 1 } 25%, 100% { opacity: 0 } }
+    @media (prefers-reduced-motion: reduce) { .cue { animation: none } }
+  </style>
+  <rect width="800" height="400" rx="20" fill="#0c1523"/>
+  <text x="24" y="40" class="heading">Asset Medic in four steps</text>
+  <text x="776" y="39" text-anchor="end" class="small">Illustrated example</text>
+  <rect class="card" x="24" y="64" width="366" height="144" rx="12"/>
+  <rect class="card" x="410" y="64" width="366" height="144" rx="12"/>
+  <rect class="card" x="24" y="228" width="366" height="144" rx="12"/>
+  <rect class="card" x="410" y="228" width="366" height="144" rx="12"/>
+  <rect class="cue" x="24" y="64" width="366" height="144" rx="12"/>
+  <rect class="cue" x="410" y="64" width="366" height="144" rx="12" style="animation-delay:4s"/>
+  <rect class="cue" x="24" y="228" width="366" height="144" rx="12" style="animation-delay:8s"/>
+  <rect class="cue" x="410" y="228" width="366" height="144" rx="12" style="animation-delay:12s"/>
+  <text x="42" y="97" class="heading">01  Paste an Output error</text>
+  <text x="42" y="132" class="value">Failed to load sound</text>
+  <text x="42" y="155" class="value">rbxassetid://123</text>
+  <text x="42" y="184" class="small">Click Find references</text>
+  <text x="428" y="97" class="heading">02  See where it is used</text>
+  <text x="428" y="129" class="value">Lobby.Door.SoundId</text>
+  <text x="428" y="153" class="value">Garage.Door.SoundId</text>
+  <text x="428" y="184" class="small">AudioConfig, line 12 · read-only</text>
+  <text x="42" y="261" class="heading">03  Review the replacement</text>
+  <text x="42" y="300" class="value">123 → 456</text>
+  <text x="42" y="332" class="small">Preview two selected SoundId changes</text>
+  <text x="428" y="261" class="heading">04  Apply, then undo</text>
+  <text x="428" y="300" class="value">2 applied · 0 failed</text>
+  <text x="428" y="332" class="small">Edit → Undo restores both original IDs</text>
+</svg>

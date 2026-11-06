@@ -13,6 +13,8 @@
 
 </div>
 
+![Illustrated demo of finding asset references, previewing a replacement, and undoing the batch](docs/assets/demo.svg)
+
 ---
 
 Paste an asset ID, Roblox URL, or Output error. Asset Medic finds matching objects and script lines, lets you review selected replacements, and groups successful property edits into one Studio undo operation.
